@@ -1,16 +1,10 @@
 ﻿@inherits LayoutComponentBase
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+<div class="popup-layout">
+    <header class="popup-header px-3 py-2">
+        <span class="popup-title">🔷 Blazor Extension</span>
+    </header>
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-        </div>
-
-        <article class="content px-4">
-            @Body
-        </article>
+    <main class="popup-body px-3 py-2">
+        @Body
     </main>
 </div>

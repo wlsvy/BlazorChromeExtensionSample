@@ -20,13 +20,13 @@
 ### Phase 1 — 프로젝트 뼈대 구성
 **목표**: 빈 Blazor WASM 앱이 Extension Popup으로 뜨는 것 확인
 
-- [ ] `dotnet new blazorwasm -o src/BlazorExtension` 실행
-- [ ] `wwwroot/manifest.json` 작성 (Manifest V3)
-  - `popup` → `popup.html` (= Blazor의 `index.html` 사용)
-  - 최소 권한만 선언
-- [ ] `dotnet publish` 후 `dist/` 복사
+- [x] `dotnet new blazorwasm -o src/BlazorExtension` 실행
+- [x] `wwwroot/manifest.json` 작성 (Manifest V3)
+  - `action.default_popup` → `index.html`
+  - CSP: `script-src 'self' 'wasm-unsafe-eval' 'unsafe-inline'` (inline import map 허용)
+- [x] `dotnet publish` 후 `dist/` 복사 (`scripts/build.sh`)
 - [ ] Chrome 개발자 모드로 로드 → Popup 버튼 클릭 시 Blazor UI 표시 확인
-- [ ] Extension 아이콘 (16, 48, 128px) 추가
+- [x] Extension 아이콘 (16, 48, 128px) 추가 (sips로 icon-192.png 리사이즈)
 
 **완료 기준**: Blazor Counter 기본 페이지가 Chrome Extension Popup에 렌더링됨
 

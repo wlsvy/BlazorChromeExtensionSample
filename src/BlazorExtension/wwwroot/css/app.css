@@ -1,5 +1,35 @@
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* Chrome Extension popup fixed width */
+    width: 380px;
+    min-height: 200px;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Popup layout */
+.popup-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+}
+
+.popup-header {
+    background-color: #1b6ec2;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.popup-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.popup-body {
+    flex: 1;
 }
 
 h1:focus {

@@ -88,6 +88,15 @@ dotnet publish src/BlazorExtension/BlazorExtension.csproj -c Release -o publish/
   - 예: `[[dotnet-il-wasm-runtime]]`, `[[manifest-versions]]`
   - 문서 하단에 `## 관련 문서` 섹션을 두고 연관 링크를 모아둔다
 
+## 보안 규칙 (철저 준수)
+이 프로젝트는 **GitHub Public Repository**입니다.
+
+- **민감성 데이터 작성 금지**: API 키, 토큰, 비밀번호, 개인정보 등은 코드·문서에 직접 작성하지 않는다
+- **작성 전 보고 의무**: 민감할 수 있는 정보를 파일에 쓰기 전에 반드시 사용자에게 먼저 확인을 받는다
+- **환경변수 분리**: 비밀값은 `.env` 또는 사용자 secrets 저장소를 사용하고, `.gitignore`에 등록한다
+- **gitignore 확인**: 민감 파일(`*.env`, `appsettings.*.json`, `secrets/` 등)이 `.gitignore`에 포함되어 있는지 주기적으로 확인한다
+- **CSP 준수**: inline script, eval() 등 XSS 위험 패턴 사용 금지 (Manifest V3 정책과도 일치)
+
 ## 주의사항
 - Blazor WASM은 `index.html` 기반 SPA이므로 popup.html이 이를 래핑하는 구조
 - `_framework/` 경로의 WASM 파일은 Extension 번들에 포함되어야 함

@@ -19,6 +19,8 @@ wwwroot/css/app.css
 ## Chrome Extension build output
 dist/
 extension-output/
+publish/
+releases/
 
 ## Node / npm (if any tooling)
 node_modules/
